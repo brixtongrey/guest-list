@@ -1,3 +1,6 @@
+import { useEffect } from "react";
+import { getAllGuests } from "./api/guests";
+
 function App() {
   return (
   <>
