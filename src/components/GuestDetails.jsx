@@ -6,10 +6,10 @@ function GuestDetails({ guest, onBack }) {
           Back
         </button>
         <h2>{guest?.name}</h2>
-        <span>{guest?.email}</span>
-        <span>{guest?.phone}</span>
-        <span>{guest?.bio}</span>
-        <span>{guest?.job}</span>
+        <span>Email: {guest?.email}</span>
+        <span>Phone: {guest?.phone}</span>
+        <span>Bio: {guest?.bio}</span>
+        <span>Job: {guest?.job}</span>
       </article>
     </>
   );

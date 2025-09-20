@@ -2,6 +2,7 @@ function GuestList({ guests, setSelectedId }) {
   return (
     <>
       <h1 className="title">Guest List</h1>
+      <h3>Select a guest to see more details.</h3>
       {guests.length === 0 ? (
         <p>No Guests yet...</p>
       ) : (
