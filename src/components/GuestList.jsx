@@ -5,21 +5,28 @@ function GuestList({ guests, setSelectedId }) {
       {guests.length === 0 ? (
         <p>No Guests yet...</p>
       ) : (
-        <ul className="list">
-          {guests.map((guest) => {
-            return (
-              <li
-                onClick={() => setSelectedId(guest.id)}
-                className="list-item"
-                key={guest.id}
-              >
-                <span>{guest.name}</span>
-                <span>{guest.email}</span>
-                <span>{guest.phone}</span>
-              </li>
-            );
-          })}
-        </ul>
+        <>
+          <div className="list-header">
+            <span>Name</span>
+            <span>Email</span>
+            <span>Phone</span>
+          </div>
+          <ul className="list">
+            {guests.map((guest) => {
+              return (
+                <li
+                  onClick={() => setSelectedId(guest.id)}
+                  className="list-item"
+                  key={guest.id}
+                >
+                  <span>{guest.name}</span>
+                  <span>{guest.email}</span>
+                  <span>{guest.phone}</span>
+                </li>
+              );
+            })}
+          </ul>
+        </>
       )}
     </>
   );
