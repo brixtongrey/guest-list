@@ -1,9 +1,17 @@
-function GuestDetails() {
+function GuestDetails({ guest, onBack }) {
     return (
         <>
-        <h1>Guest Details</h1>
+        <article className="card">
+            <button className="btn"
+            onClick={onBack}>Back</button>
+            <h2>{guest.name}</h2>
+            <span>{guest.email}</span>
+            <span>{guest.phone}</span>
+            <span>{guest.bio}</span>
+            <span>{guest.job}</span>
+        </article>
         </>
-    )
+    );
 }
 
 export default GuestDetails;

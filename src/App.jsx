@@ -1,11 +1,15 @@
 import { use, useEffect, useState } from "react";
 import { getAllGuests, getGuestById } from "./api/guests";
 import GuestList from "./components/GuestList";
+import GuestDetails from "./components/GuestDetails";
 
 function App() {
   const [guests, setGuests] = useState([]);
   const [selectedGuest, setSelectedGuest] = useState(null);
   const [selectedId, setSelectedId] = useState(null);
+
+  console.log("selectedId", selectedId);
+  console.log("selectedGuest", selectedGuest);
 
   //fetch all Guests on mount
   useEffect(() => {
@@ -36,9 +40,19 @@ function App() {
 
   return (
     <main className="container">
-      <h1>Guests</h1>
-      <GuestList guests={guests} 
+      {selectedId ? (
+        <GuestDetails
+        guest={selectedGuest}
+        onBack={() => {
+          setSelectedId(null)
+          setSelectedGuest(null)
+        }}
+        
+        />
+      ) : (
+        <GuestList guests={guests} 
       setSelectedId={setSelectedId}/>
+      )}
     </main>
   );
 }
