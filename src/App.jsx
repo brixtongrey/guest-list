@@ -8,8 +8,8 @@ function App() {
   const [selectedGuest, setSelectedGuest] = useState(null);
   const [selectedId, setSelectedId] = useState(null);
 
-  console.log("selectedId", selectedId);
-  console.log("selectedGuest", selectedGuest);
+  // console.log("selectedId", selectedId);
+  // console.log("selectedGuest", selectedGuest);
 
   //fetch all Guests on mount
   useEffect(() => {
@@ -27,6 +27,9 @@ function App() {
 
   // fetch single guest
   useEffect(() => {
+
+    if (!selectedId) return;
+
     async function loadSingleGuest() {
       try {
         const data = await getGuestById(selectedId);
@@ -47,7 +50,6 @@ function App() {
           setSelectedId(null)
           setSelectedGuest(null)
         }}
-        
         />
       ) : (
         <GuestList guests={guests} 
