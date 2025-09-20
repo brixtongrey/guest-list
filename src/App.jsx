@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
 import { getAllGuests } from "./api/guests";
+import GuestList from "./components/GuestList";
 
 function App() {
 
   const [guests, setGuests] = useState([]);
+
 
 //fetch all Guests on mount
   useEffect(() => {
@@ -22,9 +24,10 @@ function App() {
 
 
   return (
-  <>
+  <main className="container">
   <h1>Guests</h1>
-  </>
+  <GuestList guests={guests}/>
+  </main>
 );
 }
 
